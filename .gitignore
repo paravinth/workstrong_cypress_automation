@@ -1,0 +1,45 @@
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+node
+package-lock.json
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
+
+# NPM & Bower
+bower_components/
+node_modules/
+
+# Node
+npm-debug.log
+
+# Hibernate Search
+lucene/
+
+# production build files
+vendor.js
+vendor.js.gz
+build.js
+templates.js
+
+
+#Netbeans
+/nb-configuration.xml
+/nbactions.xml
+
+# Code-Analysis tools
+.tern-project
+
+# Remove Screenshots under Cypress
+/cypress/screenshots/

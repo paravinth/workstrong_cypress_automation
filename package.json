@@ -1,0 +1,27 @@
+{
+  "name": "radsafety",
+  "angular": "app",
+  "version": "1.5.0",
+  "index": "src/main/webapp/WEB-INF/views/index.jsp",
+  "devDependencies": {
+    "conventional-changelog": "1.1.5",
+    "cypress": "^3.3.1",
+    "gulp": "^3.9.1",
+    "jasmine-core": "^2.8.0",
+    "jasmine-spec-reporter": "~4.2.1",
+    "jshint": "^2.9.5",
+    "jshint-stylish": "^2.2.1",
+    "moment": "^2.24.0",
+    "phantomjs": "^2.1.7",
+    "protractor": "^5.3.1"
+  },
+  "dependencies": {
+    "bower": "^1.8.4",
+    "chai": "^4.2.0",
+    "cypressautomocker": "^1.0.4",
+    "lodash": "^4.17.4",
+    "node": "^9.11.0",
+    "node-sass": "^4.8.3",
+    "xlsx": "^0.11.16"
+  }
+}

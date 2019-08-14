@@ -1,6 +1,46 @@
 class FetchCreateWorkstrongForm {
-    constructor({ cr_home_url }) {
+    constructor({ cr_home_url, adjuster_name, client_firstname, client_lastname, client_dob, tpa_received_date, basic_department, basic_email, basic_phone_number, basic_secondary_phone_number, basic_referral_type, basic_referral_date, basic_location, recent_claim_number, recent_medical_record_no, recent_icd9_code, recent_icd10_code, recent_date_ofinjury, recent_injury_bodyPart, recent_injury_sub_bodyPart, recent_nature_ofinjury, recent_nature_sub_ofinjury, recent_incident_type, recent_incident_sub_type, recent_medical_provider, recent_legacy_data, previous_claim_number, previous_medical_record_no, previous_icd9_code, previous_icd10_code, previous_date_ofinjury, previous_injury_bodyPart, previous_injury_sub_bodyPart, previous_nature_ofinjury, previous_nature_sub_ofinjury, previous_incident_type, previous_incident_sub_type, previous_medical_provider, previous_legacy_data, prior_injuries_list, prior_injuries_date }) {
         this.cr_home_url = cr_home_url;
+        this.adjuster_name = adjuster_name;
+        this.client_firstname = client_firstname;
+        this.client_lastname = client_lastname;
+        this.client_dob = client_dob;
+        this.tpa_received_date = tpa_received_date;
+        this.basic_department = basic_department;
+        this.basic_email = basic_email;
+        this.basic_phone_number = basic_phone_number;
+        this.basic_secondary_phone_number = basic_secondary_phone_number;
+        this.basic_referral_type = basic_referral_type;
+        this.basic_referral_date = basic_referral_date;
+        this.basic_location = basic_location;
+        this.recent_claim_number = recent_claim_number;
+        this.recent_medical_record_no = recent_medical_record_no;
+        this.recent_icd9_code = recent_icd9_code;
+        this.recent_icd10_code = recent_icd10_code;
+        this.recent_date_ofinjury = recent_date_ofinjury;
+        this.recent_injury_bodyPart = recent_injury_bodyPart;
+        this.recent_injury_sub_bodyPart = recent_injury_sub_bodyPart;
+        this.recent_nature_ofinjury = recent_nature_ofinjury;
+        this.recent_nature_sub_ofinjury = recent_nature_sub_ofinjury;
+        this.recent_incident_type = recent_incident_type;
+        this.recent_incident_sub_type = recent_incident_sub_type;
+        this.recent_medical_provider = recent_medical_provider;
+        this.recent_legacy_data = recent_legacy_data;
+        this.previous_claim_number = previous_claim_number;
+        this.previous_medical_record_no = previous_medical_record_no;
+        this.previous_icd9_code = previous_icd9_code;
+        this.previous_icd10_code = previous_icd10_code;
+        this.previous_date_ofinjury = previous_date_ofinjury;
+        this.previous_injury_bodyPart = previous_injury_bodyPart;
+        this.previous_injury_sub_bodyPart = previous_injury_sub_bodyPart;
+        this.previous_nature_ofinjury = previous_nature_ofinjury;
+        this.previous_nature_sub_ofinjury = previous_nature_sub_ofinjury;
+        this.previous_incident_type = previous_incident_type;
+        this.previous_incident_sub_type = previous_incident_sub_type;
+        this.previous_medical_provider = previous_medical_provider;
+        this.previous_legacy_data = previous_legacy_data;
+        this.prior_injuries_list = prior_injuries_list;
+        this.prior_injuries_date = prior_injuries_date;
     }
 }
 export default FetchCreateWorkstrongForm;

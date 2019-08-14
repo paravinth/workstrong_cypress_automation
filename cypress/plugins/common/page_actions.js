@@ -156,6 +156,21 @@ class UiAction {
         })
     }
 
+    getUserID () {
+        cy.location('hash').then(function ($el) {
+            var one = $el.toString().split('/')[2]
+            return one// cy.log("one   :" + one)
+        })
+    }
 
+    expectSpan (selector, expectedText) {
+        cy.get(selector).then(function ($el) {
+            expect($el).to.contain(expectedText)
+        })
+    }
+
+    expectVisible (selector) {
+        cy.get(selector).should('be.visible')
+    }
 }
 export default UiAction;

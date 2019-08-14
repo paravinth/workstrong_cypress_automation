@@ -1,0 +1,37 @@
+[
+    {
+        "contact_information": {
+            "up_primary_contact": "6482748389",
+            "up_secondary_contact": "7834829378",
+            "up_email": "rkuriakose@ucsd.edu",
+            "up_notes": "Testing notes /n one \n two"
+        },
+        "intial_review": {
+            "up_review_date": "04/22/2016",
+            "up_not_potential_reason": "Not a Good Candidate as per HR or Risk Manager"
+        },
+        "hr_medical_clearance": {
+            "up_hr_request_date": "08/23/2017",
+            "up_hr_cleared_date": "12/15/2017",
+            "up_med_cleared_date": "02/05/2018"
+        },
+        "contact_attempts": {
+            "up_contact_type": "Phone",
+            "up_contact_date": "09/11/2017",
+            "up_contact_note": "unreachable zone",
+            "up_next_contact_date": "12/30/2018"
+        },
+        "program_type": {
+            "up_enroll_date": "07/03/2018"
+        },
+        "program_completion": {
+            "up_Completed": "Completed",
+            "up_Terminated": "Terminated",
+            "up_Separated_from_UC": "Separated from UC",
+            "up_Unresponsive": "Unresponsive",
+            "up_Not_Interested": "Not Interested",
+            "up_Claim_Denied": "Claim Denied",
+            "up_dateofCompletion": "10/16/2018"
+        }
+    }
+]

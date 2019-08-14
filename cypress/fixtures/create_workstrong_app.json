@@ -2,7 +2,57 @@
     {
         "navigate_page": {
             "cr_home_url": "https://dev.riskandsafety.com/workstrong",
-            "cr_rss_user_email":"apalanichamy@ucdavis.edu"
+            "cr_rss_user_email": "apalanichamy@ucdavis.edu"
+        },
+        "adjuster_information": {
+            "adjuster_name": "Anthony Harris"
+        },
+        "basic_information": {
+            "client_firstname": "Yesenia",
+            "client_lastname": "Sanchez",
+            "client_dob": "09/26/1961",
+            "tpa_received_date": "05/06/2016",
+            "basic_department": "Automation Testing",
+            "basic_email": "ucdavis@gmail.com",
+            "basic_phone_number": "4702873923",
+            "basic_secondary_phone_number": "9239323792",
+            "basic_referral_type": "MANUAL",
+            "basic_referral_date": "05/06/2016",
+            "basic_location": "UC Davis"
+        },
+        "most_recent_claim": {
+            "recent_claim_number": "2016185644",
+            "recent_medical_record_no": "7815515767",
+            "recent_icd9_code": "S46.011",
+            "recent_icd10_code": "E919.4",
+            "recent_date_ofinjury": "03/02/2016",
+            "recent_injury_bodyPart": "Upper Extremity",
+            "recent_injury_sub_bodyPart": "Multi-Upper Extremity",
+            "recent_nature_ofinjury": "Skin Abrasion/Abnormality",
+            "recent_nature_sub_ofinjury": "Dermal Disorder/Injury",
+            "recent_incident_type": "Physical Movement",
+            "recent_incident_sub_type": "Lifting",
+            "recent_medical_provider": "UnitedHealthCare",
+            "recent_legacy_data": "2011-11-30 Claim Type - Medical; Body Part - Upper Arm(s); Incident Type - Struck an Object"
+        },
+        "previous_claim": {
+            "previous_claim_number": "2016182367",
+            "previous_medical_record_no": "3319849482",
+            "previous_icd9_code": "S16.1XXD",
+            "previous_icd10_code": "E988.8",
+            "previous_date_ofinjury": "12/07/2015",
+            "previous_injury_bodyPart": "Head",
+            "previous_injury_sub_bodyPart": "Facial, Soft Tissue",
+            "previous_nature_ofinjury": "Musculoskeletal Disorders",
+            "previous_nature_sub_ofinjury": "Strain or Sprain",
+            "previous_incident_type": "Vehicle",
+            "previous_incident_sub_type": "Vehicle Accident",
+            "previous_medical_provider": "UnitedHealthCare",
+            "previous_legacy_data": "(2011112211) Claim Type - Medical; Back - Thoracic; Slip/Fall Same Level"
+        },
+        "prior_injuries": {
+            "prior_injuries_list": "First Aid Unpaid; Lower Leg-calf(s); Contusion/Bruise; Struck by Object",
+            "prior_injuries_date": "11/23/2015"
         }
     }
 ]

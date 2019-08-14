@@ -26,4 +26,6 @@ module.exports = {
     commands: customCommands
 } */
 
+/// <reference types="cypress" />
+
 import './commands'

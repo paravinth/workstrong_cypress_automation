@@ -51,14 +51,16 @@ describe('NotIntrested Workstrong assessment Form', () => {
 
     it('navigate Create App', () => {
         setToken();
+        global.statusCheck = "SEPARATED_FROMUC"
         WorkstrongCollection.navigateRss(CreateWorkstrongForm.cr_home_url)
     });
 
     it('search and edit application form', () => {
         cy.log("global.hashValue ", global.hashValue)
         var fetchHashValue = global.hashValue
+        var getStatusCheck = global.statusCheck
         setToken();
-        WorkstrongCollection.searchReadyStatus(fetchHashValue)
+        WorkstrongCollection.searchReadyStatus(fetchHashValue, getStatusCheck)
     });
 
     it('Adjuster Information', () => {

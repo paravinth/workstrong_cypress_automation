@@ -49,17 +49,19 @@ describe('Terminated Workstrong assessment Form', () => {
 
     it('navigate Create App', () => {
         setToken();
+        global.statusCheck = "COMPLETED"
         WorkstrongCollection.navigateRss(CreateWorkstrongForm.cr_home_url)
     });
 
     it('search and edit application form', () => {
         // cy.log("global.hashValue ", global.hashValue)
-         //temp
+        //temp
         //  global.hashValue = "e65c3d8b-f412-449e-a2d7-905d1a60a039"
-         //temp
+        //temp
         var fetchHashValue = global.hashValue
+        var getStatusCheck = global.statusCheck
         setToken();
-        WorkstrongCollection.searchReadyStatus(fetchHashValue)
+        WorkstrongCollection.searchReadyStatus(fetchHashValue, getStatusCheck)
     });
 
     it('Adjuster Information', () => {
@@ -88,7 +90,7 @@ describe('Terminated Workstrong assessment Form', () => {
     })
 
     it('Save Form', () => {
-        setToken();     
+        setToken();
         WorkstrongCollection.SedgwickSave(assertions.sedgwick_form.saveForm_successmsg)
     })
 
@@ -120,7 +122,7 @@ describe('Terminated Workstrong assessment Form', () => {
 
     it('Set Terminated Status', () => {
         setToken();
-        WorkstrongCollection.programCompletion(updateProgramCompletion.up_Terminated, updateProgramCompletion.up_dateofCompletion,updateProgramCompletion.up_Terminate_reason)
+        WorkstrongCollection.programCompletion(updateProgramCompletion.up_Terminated, updateProgramCompletion.up_dateofCompletion, updateProgramCompletion.up_Terminate_reason)
     });
 
     it('Wellness Submit Application', () => {

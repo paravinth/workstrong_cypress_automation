@@ -69,6 +69,7 @@ describe('OnHold Workstrong assessment Form', () => {
 
     it('navigate Create App', () => {
         setToken();
+        global.statusCheck = "ENROLLED"
         WorkstrongCollection.navigateRss(CreateWorkstrongForm.cr_home_url)
     });
 
@@ -78,8 +79,9 @@ describe('OnHold Workstrong assessment Form', () => {
         // global.hashValue = "41179c2c-1453-42f5-9399-901a9f98cbf1"
         //temp
         var fetchHashValue = global.hashValue
+        var getStatusCheck = global.statusCheck
         setToken();
-        WorkstrongCollection.searchReadyStatus(fetchHashValue)
+        WorkstrongCollection.searchReadyStatus(fetchHashValue, getStatusCheck)
     });
 
     it('Adjuster Information', () => {

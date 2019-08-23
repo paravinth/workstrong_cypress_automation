@@ -26,7 +26,7 @@ describe('Claim Denied Workstrong assessment Form', () => {
     const todaysDate = Cypress.moment().format('MM/DD/YYYY')
 
     before(() => {
-       
+
         cy.fixture(deniedForm).then((fetchUserData) => {
             CreateWorkstrongForm = new FetchDeniedWorkstrongForm(fetchUserData[0].navigate_page)
             CreateWorkstrongAdjuster = new FetchDeniedWorkstrongForm(fetchUserData[0].adjuster_information)
@@ -48,14 +48,16 @@ describe('Claim Denied Workstrong assessment Form', () => {
 
     it('navigate Create App', () => {
         setToken();
+        global.statusCheck = "UNRESPONSIVE"
         WorkstrongCollection.navigateRss(CreateWorkstrongForm.cr_home_url)
     });
 
     it('search and edit application form', () => {
         cy.log("global.hashValue ", global.hashValue)
         var fetchHashValue = global.hashValue
+        var getStatusCheck = global.statusCheck
         setToken();
-        WorkstrongCollection.searchReadyStatus(fetchHashValue)
+        WorkstrongCollection.searchReadyStatus(fetchHashValue, getStatusCheck)
     });
 
     it('Adjuster Information', () => {

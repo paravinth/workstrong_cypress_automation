@@ -46,6 +46,7 @@ describe('Completed Workstrong assessment Form', () => {
 
     it('navigate Create App', () => {
         setToken();
+        global.statusCheck = "ON_HOLD"
         WorkstrongCollection.navigateRss(CreateWorkstrongForm.cr_home_url)
     });
 
@@ -55,8 +56,9 @@ describe('Completed Workstrong assessment Form', () => {
         // global.hashValue = "cbf12d1e-dfb4-48d5-b3f0-db22f56e7abe"
         //temp
         var fetchHashValue = global.hashValue
+        var getStatusCheck = global.statusCheck
         setToken();
-        WorkstrongCollection.searchReadyStatus(fetchHashValue)
+        WorkstrongCollection.searchReadyStatus(fetchHashValue, getStatusCheck)
     });
 
     it('Adjuster Information', () => {

@@ -51,6 +51,7 @@ describe('Seperated from UC Workstrong assessment Form', () => {
 
     it('navigate Create App', () => {
         setToken();
+        global.statusCheck = "TERMINATED"
         WorkstrongCollection.navigateRss(CreateWorkstrongForm.cr_home_url)
     });
 
@@ -58,8 +59,9 @@ describe('Seperated from UC Workstrong assessment Form', () => {
         // cy.log("global.hashValue ", global.hashValue)
         // global.hashValue = "e65c3d8b-f412-449e-a2d7-905d1a60a039"
         var fetchHashValue = global.hashValue
+        var getStatusCheck = global.statusCheck
         setToken();
-        WorkstrongCollection.searchReadyStatus(fetchHashValue)
+        WorkstrongCollection.searchReadyStatus(fetchHashValue, getStatusCheck)
     });
 
     it('Adjuster Information', () => {

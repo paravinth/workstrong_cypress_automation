@@ -51,6 +51,7 @@ describe('IN-PROCESS Workstrong assessment Form', () => {
 
     it('navigate Create App', () => {
         setToken();
+        global.statusCheck = "DRAFT"
         WorkstrongCollection.navigateRss(CreateWorkstrongForm.cr_home_url)
         // WorkstrongCollection.navigateCreateApp()
     });
@@ -58,7 +59,8 @@ describe('IN-PROCESS Workstrong assessment Form', () => {
     it('Navigate to Draft Application  and Open the form', () => {
         setToken();
         var fetchHashValue = global.hashValue
-        WorkstrongCollection.searchReadyStatus(fetchHashValue)
+        var getStatusCheck = global.statusCheck
+        WorkstrongCollection.searchReadyStatus(fetchHashValue, getStatusCheck)
     });
 
     it('Adjuster Information', () => {

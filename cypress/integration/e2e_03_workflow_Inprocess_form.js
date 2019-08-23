@@ -8,10 +8,11 @@ import { findstatus } from '../fixtures/export.js';
 import * as assertions from '../fixtures/assertions';
 import FetchUpdateWorkstrongForm from '../support/objectMapper/update_workstrong_map';
 
+import getcommand from '../support/commands'
 import workstrongFormCollection from '../plugins/common/function_collectors/collection_workstrong_from';
 import FetchCreateWorkstrongForm from '../support/objectMapper/create_workstrong_map';
 
-describe('Workstrong assessment Form', () => {
+describe('IN-PROCESS Workstrong assessment Form', () => {
     let CreateWorkstrongForm = new FetchCreateWorkstrongForm({});
     let CreateWorkstrongAdjuster = new FetchCreateWorkstrongForm({});
     let CreateBasicInfo = new FetchCreateWorkstrongForm({});
@@ -25,6 +26,7 @@ describe('Workstrong assessment Form', () => {
     let updateProgramType = new FetchUpdateWorkstrongForm({});
     let updateProgramCompletion = new FetchUpdateWorkstrongForm({});
     let WorkstrongCollection = new workstrongFormCollection({});
+
     const todaysDate = Cypress.moment().format('MM/DD/YYYY')
 
     before(() => {
@@ -44,60 +46,70 @@ describe('Workstrong assessment Form', () => {
             updateProgramType = new FetchUpdateWorkstrongForm(fetchUserData[0].program_type)
             updateProgramCompletion = new FetchUpdateWorkstrongForm(fetchUserData[0].program_completion)
         })
-
-        // setToken();
     })
 
-    /* 
-        it('navigate Create App', () => {
-            setToken();
-            WorkstrongCollection.navigateRss(CreateWorkstrongForm.cr_home_url)
-            WorkstrongCollection.navigateCreateApp()
-        });
-    
-        it('Adjuster Information', () => {
-            setToken();
-            WorkstrongCollection.sedgwickAdjuster(CreateWorkstrongAdjuster.adjuster_name)
-        });
-    
-        it('Basic Information', () => {
-            setToken();
-            WorkstrongCollection.SedgwickBasicInfo(CreateBasicInfo.client_firstname, CreateBasicInfo.client_lastname, CreateBasicInfo.client_dob, CreateBasicInfo.tpa_received_date, CreateBasicInfo.basic_department, CreateBasicInfo.basic_email, CreateBasicInfo.basic_phone_number, CreateBasicInfo.basic_secondary_phone_number, CreateBasicInfo.basic_referral_type, CreateBasicInfo.basic_referral_date, CreateBasicInfo.basic_location)
-        });
-    
-        it('Most Recent Claim', () => {
-            setToken();
-            WorkstrongCollection.SedgwickRecentClaim(CreateRecentClaim.recent_claim_number, CreateRecentClaim.recent_medical_record_no, CreateRecentClaim.recent_icd9_code, CreateRecentClaim.recent_icd10_code, CreateRecentClaim.recent_date_ofinjury, CreateRecentClaim.recent_injury_bodyPart, CreateRecentClaim.recent_injury_sub_bodyPart, CreateRecentClaim.recent_nature_ofinjury, CreateRecentClaim.recent_nature_sub_ofinjury, CreateRecentClaim.recent_incident_type, CreateRecentClaim.recent_incident_sub_type, CreateRecentClaim.recent_medical_provider, CreateRecentClaim.recent_legacy_data)
-        });
-    
-        it('Previous Claim', () => {
-            setToken();
-            WorkstrongCollection.SedgwickPreviousClaim(CreatePreviousClaim.previous_claim_number, CreatePreviousClaim.previous_medical_record_no, CreatePreviousClaim.previous_icd9_code, CreatePreviousClaim.previous_icd10_code, CreatePreviousClaim.previous_date_ofinjury, CreatePreviousClaim.previous_injury_bodyPart, CreatePreviousClaim.previous_injury_sub_bodyPart, CreatePreviousClaim.previous_nature_ofinjury, CreatePreviousClaim.previous_nature_sub_ofinjury, CreatePreviousClaim.previous_incident_type, CreatePreviousClaim.previous_incident_sub_type, CreatePreviousClaim.previous_medical_provider, CreatePreviousClaim.previous_legacy_data)
-        });
-    
-    
-        it('Prior Injuries', () => {
-            setToken();
-            WorkstrongCollection.SedgwickPriorInjuries(CreatePriorInjuries.prior_injuries_list, CreatePriorInjuries.prior_injuries_date)
-        })
-    
-        it('Save Form', () => {
-            setToken();
-            WorkstrongCollection.SedgwickSave(assertions.sedgwick_form.saveForm_successmsg)
-        })
-    
-        it('Sedwick Submit Application', () => {
-            setToken();
-            WorkstrongCollection.SedgwickSubmit(assertions.sedgwick_form.saveForm_successmsg)
-        });
-        it('Navigate to Ready status  and Open the form', () => {
-            setToken();
-            WorkstrongCollection.searchReadyStatus()
-        });
- */
+
+    it('navigate Create App', () => {
+        setToken();
+        WorkstrongCollection.navigateRss(CreateWorkstrongForm.cr_home_url)
+        // WorkstrongCollection.navigateCreateApp()
+    });
+
+    it('Navigate to Draft Application  and Open the form', () => {
+        setToken();
+        var fetchHashValue = global.hashValue
+        WorkstrongCollection.searchReadyStatus(fetchHashValue)
+    });
+
+    it('Adjuster Information', () => {
+        setToken();
+        WorkstrongCollection.sedgwickAdjuster(CreateWorkstrongAdjuster.adjuster_name)
+    });
+
+    it('Basic Information', () => {
+        setToken();
+        WorkstrongCollection.SedgwickBasicInfo(CreateBasicInfo.client_firstname, CreateBasicInfo.client_lastname, CreateBasicInfo.client_dob, CreateBasicInfo.tpa_received_date, CreateBasicInfo.basic_department, CreateBasicInfo.basic_email, CreateBasicInfo.basic_phone_number, CreateBasicInfo.basic_secondary_phone_number, CreateBasicInfo.basic_referral_type, CreateBasicInfo.basic_referral_date, CreateBasicInfo.basic_location)
+    });
+
+    it('Most Recent Claim', () => {
+        setToken();
+        WorkstrongCollection.SedgwickRecentClaim(CreateRecentClaim.recent_claim_number, CreateRecentClaim.recent_medical_record_no, CreateRecentClaim.recent_icd9_code, CreateRecentClaim.recent_icd10_code, CreateRecentClaim.recent_date_ofinjury, CreateRecentClaim.recent_injury_bodyPart, CreateRecentClaim.recent_injury_sub_bodyPart, CreateRecentClaim.recent_nature_ofinjury, CreateRecentClaim.recent_nature_sub_ofinjury, CreateRecentClaim.recent_incident_type, CreateRecentClaim.recent_incident_sub_type, CreateRecentClaim.recent_medical_provider, CreateRecentClaim.recent_legacy_data)
+    });
+
+    it('Previous Claim', () => {
+        setToken();
+        WorkstrongCollection.SedgwickPreviousClaim(CreatePreviousClaim.previous_claim_number, CreatePreviousClaim.previous_medical_record_no, CreatePreviousClaim.previous_icd9_code, CreatePreviousClaim.previous_icd10_code, CreatePreviousClaim.previous_date_ofinjury, CreatePreviousClaim.previous_injury_bodyPart, CreatePreviousClaim.previous_injury_sub_bodyPart, CreatePreviousClaim.previous_nature_ofinjury, CreatePreviousClaim.previous_nature_sub_ofinjury, CreatePreviousClaim.previous_incident_type, CreatePreviousClaim.previous_incident_sub_type, CreatePreviousClaim.previous_medical_provider, CreatePreviousClaim.previous_legacy_data)
+    });
+
+
+    it('Prior Injuries', () => {
+        setToken();
+        WorkstrongCollection.SedgwickPriorInjuries(CreatePriorInjuries.prior_injuries_list, CreatePriorInjuries.prior_injuries_date)
+    })
+
+    it('Save Form', () => {
+        setToken();
+        WorkstrongCollection.SedgwickSave(assertions.sedgwick_form.saveForm_successmsg)
+    })
+
+    /* it('Sedwick Submit Application', () => {
+        setToken();
+        WorkstrongCollection.SedgwickSubmit(assertions.sedgwick_form.saveForm_successmsg)
+    }); 
+
+  it('Sedwick Save Application', () => {
+        setToken();
+        WorkstrongCollection.SedgwickSubmit(assertions.sedgwick_form.saveForm_successmsg)
+    });
+*/
+    it('Navigate to Wellness Program Page', () => {
+        setToken();
+        WorkstrongCollection.NextpageNavigate();
+    });
 
     it('Contact Information', () => {
         setToken();
+        cy.log("Global", global.hashValue);
         WorkstrongCollection.userContactInfo(updateContactInfo.up_primary_contact, updateContactInfo.up_secondary_contact, updateContactInfo.up_email, updateContactInfo.up_notes)
     });
 
@@ -116,16 +128,22 @@ describe('Workstrong assessment Form', () => {
         WorkstrongCollection.contactAttempts(updateContactAttempts.up_contact_type, updateContactAttempts.up_contact_date, updateContactAttempts.up_contact_note, updateContactAttempts.up_next_contact_date);
     });
 
-    it('Program Type', () => {
+    it('Save Form', () => {
         setToken();
-        WorkstrongCollection.programType(updateProgramType.up_enroll_date);
+        WorkstrongCollection.submitAloneForm()
     });
 
-    it('On Hold && Program Completion', () => {
-        setToken();
-        WorkstrongCollection.holdHistroyYes();
-        WorkstrongCollection.programCompletion(updateProgramCompletion.up_Completed, updateProgramCompletion.up_dateofCompletion);
-    });
+    /* 
+        it('Program Type', () => {
+            setToken();
+            WorkstrongCollection.programType(updateProgramType.up_enroll_date);
+        });
+    
+        it('On Hold && Program Completion', () => {
+            setToken();
+            // WorkstrongCollection.holdHistroyYes();
+            WorkstrongCollection.programCompletion(updateProgramCompletion.up_Completed, updateProgramCompletion.up_dateofCompletion);
+        }); */
 
 });
 

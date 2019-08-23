@@ -74,7 +74,8 @@ module.exports = {
         'save_button': '#SaveParticipant',
         'submit_button': '#SubmitParticipant',
         'success_message': '.help-block',
-        'user_success_message': '#ParticipantSavedMessage'
+        'user_success_message': '#ParticipantSavedMessage',
+        'next_button': '#NextParticipant'
     },
     menu_tabs:
     {
@@ -97,5 +98,9 @@ module.exports = {
     },
     'ready_status': {
         'menu_active': '.tab-pane.ng-scope.active'
+    },
+    'wellness_submit_save': {
+        'save': '[ng-click="ctrl.save()"]',
+        'submit': '[ng-show="ctrl.enableSubmit()"]'
     }
 }

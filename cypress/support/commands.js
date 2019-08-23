@@ -25,11 +25,14 @@
     const todaysDate = Cypress.moment().format('MMM DD, YYYY');
 });
  */
+
+ var testone
+
 Cypress.Commands.add('login', () => {
   cy.log('test')
 });
 Cypress.Commands.add('testing', () => {
-  cy.log('test')
+  var testone
 });
 /* Cypress.Commands.test('login1', () => {
   cy.log('test')

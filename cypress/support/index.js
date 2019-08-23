@@ -29,3 +29,7 @@ module.exports = {
 /// <reference types="cypress" />
 
 import './commands'
+
+global.hashValue = "";
+global.statusCheck = "";
+var testone = ""

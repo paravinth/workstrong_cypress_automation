@@ -53,10 +53,21 @@ module.exports = {
         'program_status': '#completionType',
         'completion_typeDate': '#completionTypeDate',
         'recent_dateAutoClick': '.btn-sm.btn-info.active',
+        'terminated_reason':"#terminationReason"
+    },
+    oh_hold:
+    {
+        'onHold_startDate': '#holdStartDate',
+        'onHold_endDate': '#holdEndDate',
+        'reason_type': '#reasonType',
+        'add_button': 'button[ng-click="ctrl.addHoldHistory(ctrl.hold)"]',
+        'recent_dateAutoClick': '.btn-sm.btn-info.active',
     },
     save_submit:
     {
         'save_btn': 'button[ng-click="ctrl.save()"]',
-        'submit_btn': 'button[ng-show="ctrl.enableSubmit()"]'
+        'submit_btn': 'button[ng-show="ctrl.enableSubmit()"]',
+        'next_button': '#NextParticipant',
+        'previous_wait': 'Previous'
     }
 }

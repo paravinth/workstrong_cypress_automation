@@ -9,7 +9,7 @@ import * as assertions from '../fixtures/assertions'
 import workstrongFormCollection from '../plugins/common/function_collectors/collection_workstrong_from';
 import FetchCreateWorkstrongForm from '../support/objectMapper/create_workstrong_map';
 
-describe('Workstrong assessment Form', () => {
+describe('Draft Workstrong assessment Form', () => {
     let CreateWorkstrongForm = new FetchCreateWorkstrongForm({});
     let CreateWorkstrongAdjuster = new FetchCreateWorkstrongForm({});
     let CreateBasicInfo = new FetchCreateWorkstrongForm({});

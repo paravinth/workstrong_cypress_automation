@@ -51,7 +51,7 @@ describe('IN-PROCESS Workstrong assessment Form', () => {
 
     it('navigate Create App', () => {
         setToken();
-        global.statusCheck = "DRAFT"
+        global.statusCheck = "READY"
         WorkstrongCollection.navigateRss(CreateWorkstrongForm.cr_home_url)
         // WorkstrongCollection.navigateCreateApp()
     });

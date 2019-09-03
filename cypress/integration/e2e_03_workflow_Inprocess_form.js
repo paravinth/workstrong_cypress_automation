@@ -56,10 +56,12 @@ describe('IN-PROCESS Workstrong assessment Form', () => {
         // WorkstrongCollection.navigateCreateApp()
     });
 
-    it('Navigate to Draft Application  and Open the form', () => {
+    it('Navigate to Ready Application  and Open the form', () => {
         setToken();
         var fetchHashValue = global.hashValue
+        // var fetchHashValue = '8514dd63-58e6-4e1c-a7a6-d82a4fe4fa55'
         var getStatusCheck = global.statusCheck
+        cy.StatusVerify(getStatusCheck, fetchHashValue)
         WorkstrongCollection.searchReadyStatus(fetchHashValue, getStatusCheck)
     });
 

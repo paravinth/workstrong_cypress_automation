@@ -78,9 +78,10 @@ describe('OnHold Workstrong assessment Form', () => {
         //temp
         // global.hashValue = "41179c2c-1453-42f5-9399-901a9f98cbf1"
         //temp
+        setToken();
         var fetchHashValue = global.hashValue
         var getStatusCheck = global.statusCheck
-        setToken();
+        cy.StatusVerify(getStatusCheck, fetchHashValue)
         WorkstrongCollection.searchReadyStatus(fetchHashValue, getStatusCheck)
     });
 

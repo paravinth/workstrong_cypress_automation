@@ -96,6 +96,7 @@ describe('Ready Workstrong assessment Form', () => {
         setToken();
         var fetchHashValue = global.hashValue
         var getStatusCheck = global.statusCheck
+        cy.StatusVerify(getStatusCheck, fetchHashValue)
         WorkstrongCollection.searchReadyStatus(fetchHashValue, getStatusCheck)
     });
 

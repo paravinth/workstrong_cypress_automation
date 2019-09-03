@@ -25,8 +25,9 @@
     const todaysDate = Cypress.moment().format('MMM DD, YYYY');
 });
  */
+import * as config from '../support/config'
 
- var testone
+var testone
 
 Cypress.Commands.add('login', () => {
   cy.log('test')
@@ -34,6 +35,24 @@ Cypress.Commands.add('login', () => {
 Cypress.Commands.add('testing', () => {
   var testone
 });
+Cypress.Commands.add('StatusVerify', (status, hashValue) => {
+  cy
+    .request({
+      url: 'https://dev.riskandsafety.com/workstrong/api/dashboard/wellness-program/role/DO/search/' + hashValue + '/itemsPerPage/25',
+      method: 'GET',
+      headers: config.ApiAuthorization
+    }).then(function (resp) {
+      expect(resp.body[0].statusType).to.eq(status)
+      // cy.log(resp.body[0].statusType)
+      if (status == resp.body[0].statusType) {
+        cy.log("Status match")
+      } else {
+        cy.log("Status not match, Change your Application status");
+      }
+    })
+
+
+})
 /* Cypress.Commands.test('login1', () => {
   cy.log('test')
 }) */

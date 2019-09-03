@@ -32,4 +32,8 @@ import './commands'
 
 global.hashValue = "";
 global.statusCheck = "";
-var testone = ""
+
+Cypress.on('fail', (err, runnable) => {
+    // debugger
+    return err
+})

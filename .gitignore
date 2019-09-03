@@ -33,6 +33,8 @@ vendor.js.gz
 build.js
 templates.js
 
+# Videos
+videos/
 
 #Netbeans
 /nb-configuration.xml
@@ -43,3 +45,4 @@ templates.js
 
 # Remove Screenshots under Cypress
 /cypress/screenshots/
+cypress/videos/e2e_02_workflow_ready_form.js.mp4

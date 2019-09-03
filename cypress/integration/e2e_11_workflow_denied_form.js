@@ -54,9 +54,11 @@ describe('Claim Denied Workstrong assessment Form', () => {
 
     it('search and edit application form', () => {
         cy.log("global.hashValue ", global.hashValue)
+        setToken();
+        global.hashValue = 'c99d4aff-b4b7-4ec7-85ab-d0cdca048547'
         var fetchHashValue = global.hashValue
         var getStatusCheck = global.statusCheck
-        setToken();
+        cy.StatusVerify(getStatusCheck, fetchHashValue)
         WorkstrongCollection.searchReadyStatus(fetchHashValue, getStatusCheck)
     });
 
@@ -124,6 +126,13 @@ describe('Claim Denied Workstrong assessment Form', () => {
     it('Wellness Submit Application', () => {
         setToken();
         WorkstrongCollection.WellnessSubmit(assertions.sedgwick_form.saveForm_successmsg)
+    });
+
+    it('Verify Claim Denied Status Check', () => {
+        global.statusCheck = "CLAIM_DENIED"
+        var fetchHashValue = global.hashValue
+        var getStatusCheck = global.statusCheck
+        cy.StatusVerify(getStatusCheck, fetchHashValue)
     });
 
 });

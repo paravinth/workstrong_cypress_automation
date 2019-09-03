@@ -58,9 +58,10 @@ describe('Seperated from UC Workstrong assessment Form', () => {
     it('search and edit application form', () => {
         // cy.log("global.hashValue ", global.hashValue)
         // global.hashValue = "e65c3d8b-f412-449e-a2d7-905d1a60a039"
+        setToken();
         var fetchHashValue = global.hashValue
         var getStatusCheck = global.statusCheck
-        setToken();
+        cy.StatusVerify(getStatusCheck, fetchHashValue)
         WorkstrongCollection.searchReadyStatus(fetchHashValue, getStatusCheck)
     });
 

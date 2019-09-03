@@ -54,10 +54,11 @@ describe('Unresponsive Workstrong assessment Form', () => {
     });
 
     it('search and edit application form', () => {
+        setToken();
         cy.log("global.hashValue ", global.hashValue)
         var fetchHashValue = global.hashValue
         var getStatusCheck = global.statusCheck
-        setToken();
+        cy.StatusVerify(getStatusCheck, fetchHashValue)
         WorkstrongCollection.searchReadyStatus(fetchHashValue, getStatusCheck)
     });
 

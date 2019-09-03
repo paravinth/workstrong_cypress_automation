@@ -58,9 +58,10 @@ describe('Terminated Workstrong assessment Form', () => {
         //temp
         //  global.hashValue = "e65c3d8b-f412-449e-a2d7-905d1a60a039"
         //temp
+        setToken();
         var fetchHashValue = global.hashValue
         var getStatusCheck = global.statusCheck
-        setToken();
+        cy.StatusVerify(getStatusCheck, fetchHashValue)
         WorkstrongCollection.searchReadyStatus(fetchHashValue, getStatusCheck)
     });
 

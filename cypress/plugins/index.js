@@ -14,4 +14,14 @@
 module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
+  const secret = require(`${process.env.HOME}/.rss/secret.json`); // eslint-disable-line
+  Object.assign(config.env, secret);
+  on('before:browser:launch', (browser = {}, args) => {
+    if (browser.name === 'chrome') {
+      args.push('--disable-site-isolation-trials');
+      return args;
+    }
+  });
+
+  return config;
 }

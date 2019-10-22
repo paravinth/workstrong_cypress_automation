@@ -1,5 +1,9 @@
 {
-   "defaultCommandTimeout": 200000,
-   "pageLoadTimeout": 600000,
-   "chromeWebSecurity": false
+  "defaultCommandTimeout": 200000,
+  "pageLoadTimeout": 600000,
+  "chromeWebSecurity": false,
+  "env": {
+    "TOKEN_URL": "https://dev.riskandsafety.com/token/tokenserver"
+  },
+  "projectId": "ao7apu"
 }

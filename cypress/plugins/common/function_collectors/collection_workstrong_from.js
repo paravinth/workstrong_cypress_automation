@@ -124,17 +124,19 @@ class workstrongFormCollection {
         this.pageActions.clickButton(worksCreateFormObj.wellness_submit_save.save);
         this.pageActions.getElement(worksCreateFormObj.wellness_submit_save.submit);
         this.pageActions.clickButton(worksCreateFormObj.wellness_submit_save.submit);
+        // this.pageActions.getElement(worksCreateFormObj.createNewApp.create_appbtn);
     }
 
     NavigateReady = () => {
         this.pageActions.clickButton(worksCreateFormObj.menu_tabs.ready_menu);
-        this.pageActions.expectVisible(worksCreateFormObj.ready_status.menu_active)
+        this.pageActions.expectVisible(worksCreateFormObj.ready_status.menu_active);
         // this.pageActions.expectSpan(worksCreateFormObj.ready_status.)
     }
 
     searchReadyStatus = (hashcode, getStatusCheck) => {
         cy.log("hashcode ", hashcode)
         this.pageActions.clickButton(worksCreateFormObj.menu_tabs.search_menu);
+        // cy.log("test innner ", worksCreateFormObj.menu_tabs.search_menu.innerHTML);
         // this.pageActions.EnterTextClear(worksCreateFormObj.search_area.search_field, hashcode)
         cy.get(worksCreateFormObj.search_area.search_field).type(hashcode).then(function (done) {
             cy.wait(2000)

@@ -35,12 +35,12 @@ Cypress.Commands.add('login', () => {
 Cypress.Commands.add('testing', () => {
   var testone
 });
-Cypress.Commands.add('StatusVerify', (status, hashValue) => {
+Cypress.Commands.add('StatusVerify', (status, hashValue, tokenValue) => {
   cy
     .request({
       url: 'https://dev.riskandsafety.com/workstrong/api/dashboard/wellness-program/role/DO/search/' + hashValue + '/itemsPerPage/25',
       method: 'GET',
-      headers: config.ApiAuthorization
+      headers: { "Authorization": "Bearer " + tokenValue + "" }
     }).then(function (resp) {
       expect(resp.body[0].statusType).to.eq(status)
       // cy.log(resp.body[0].statusType)
@@ -53,6 +53,52 @@ Cypress.Commands.add('StatusVerify', (status, hashValue) => {
 
 
 })
+
+
+const cache = {};
+const TOKEN_CLIENT_NAME = Cypress.env('TOKEN_CLIENT_NAME');
+const TOKEN_URL = Cypress.env('TOKEN_URL');
+
+Cypress.Commands.add('login', (userId) => {
+  cy.clientToken().then((clientToken) => {
+    cy.userToken(userId, clientToken);
+  });
+});
+
+Cypress.Commands.add('clientToken', () => {
+  const clientToken = cache[TOKEN_CLIENT_NAME];
+  if (clientToken) {
+    return clientToken;
+  }
+  return cy
+    .request('POST', `${TOKEN_URL}/clients/register`, {
+      name: TOKEN_CLIENT_NAME,
+      key: Cypress.env('TOKEN_CLIENT_KEY'),
+    })
+    .then((res) => {
+      cache[TOKEN_CLIENT_NAME] = res.body.clientApplicationToken;
+      return res.body.clientApplicationToken;
+    });
+});
+
+Cypress.Commands.add('userToken', (userId, clientToken) => {
+  const token = cache[userId];
+  if (token) {
+    return cy.setCookie('authtoken', token);
+  }
+  return cy
+    .request({
+      url: `${TOKEN_URL}/userToken/transform`,
+      method: 'POST',
+      headers: { authorization: `Bearer ${clientToken}` },
+      body: { userId },
+    })
+    .then((response) => {
+      cache[userId] = response.body.transformedToken;
+      cy.setCookie('authtoken', response.body.transformedToken);
+    });
+});
+
 /* Cypress.Commands.test('login1', () => {
   cy.log('test')
 }) */

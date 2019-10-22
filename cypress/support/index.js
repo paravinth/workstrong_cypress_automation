@@ -32,6 +32,7 @@ import './commands'
 
 global.hashValue = "";
 global.statusCheck = "";
+global.fetchToken = "";
 
 Cypress.on('fail', (err, runnable) => {
     // debugger

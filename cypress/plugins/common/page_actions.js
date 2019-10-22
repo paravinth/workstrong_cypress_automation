@@ -22,6 +22,14 @@ class UiAction {
         cy.contains(text)
     }
 
+    fetchToken () {
+        cy.getCookies().spread(($ele) => {
+            var token = $ele.value
+            cy.log(token)
+            return token;
+        })
+    }
+
     EnterTextClear (selector, text, text2, count) {
         if (count == 2) {
             cy.get(selector).clear()
